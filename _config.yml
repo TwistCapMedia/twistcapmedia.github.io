@@ -1,0 +1,73 @@
+# project definitions
+project: thirtybees_developers
+audience: developers
+product: doc
+platform: all
+version: all
+output: web
+destination: out
+topnav_title: thirty bees documents
+homepage_title: thirty bees documents
+site_title: thirty bees documents
+project_folder: thirtybees
+company_name: thirty bees
+github_editme_path: thirtybees/devdocs/blob/master
+disqus_shortname: thirty-bees
+# variables
+
+sidebar_tagline: Developer<br />Guide
+sidebar_version: Version 1.0.X
+theme_file: modern-business.css
+pdf_file_name: thirtybees-devdocs.pdf
+
+gems:
+  - algoliasearch-jekyll
+
+algolia:
+  application_id: 'CCGEH5HUSI'
+  index_name:     'thirtybees_developer_docs'
+
+port: 4009
+
+exclude:
+  - out
+  - _site
+  - _drafts
+  - configs/
+  - doc/thirtybees_writers*
+  - vendor
+
+# same for all
+host: 127.0.0.1
+feedback_email: devdocs@thirtybees.com
+
+markdown: redcarpet
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
+
+highlighter: pygments
+
+collections:
+  tooltips:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+  -
+    scope:
+      path: ""
+      type: "tooltips"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      tooltip: true
+
